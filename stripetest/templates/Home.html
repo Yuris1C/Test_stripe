@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестовое задание</title>
+</head>
+<body>
+<br><br>
+<table width="50%" align="center">
+    <col width="20%">
+    <col width="40%">
+    <col width="30%">
+    <col width="10%">
+    <tbody>
+    {% for product in products %}
+    <tr>
+        <td> {{ product.name }}</td>
+        <td> {{ product.description }}</td>
+        <td> {{ product.display_price }}</td>
+        <td>
+            <form action="/create_checkout_session" method="GET">
+                {% csrf_token %}
+                <button value="123" type="submit">Купить</button>
+                <input type="hidden" name="prod" value={{product.name}}>
+                <input type="hidden" name="price" value={{product.price}}>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table >
+<br><br>
+<table class="btn" align="center">
+    <tr>
+        <td>
+            <form action="/admin/" method="POST">
+                {% csrf_token %}
+                <button type="submit">Администрирование</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
