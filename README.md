@@ -1,8 +1,6 @@
 # Test_stripe
 Тестовое задание
 
-Не получилось опубликовать на pythonanywhere: http://yuris.pythonanywhere.com/
+http://yuris.pythonanywhere.com/
 
-В проекте не видны папки приложения и темплейт из основной папки.
-
-Если подскажете в чем ошибка - оперативно исправлю.
+admin: root password: 1234
